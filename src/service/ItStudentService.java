@@ -10,7 +10,7 @@ public class ItStudentService {
     public ItStudent inputInfo(Scanner scanner){
         System.out.println("Mời b nhập tên cho sv IT: ");
         String name = scanner.nextLine();
-        System.out.println("Mời b nhập chuyên ngành của biz: ");
+        System.out.println("Mời b nhập chuyên ngành của IT: ");
         String major = scanner.nextLine();
         System.out.println("Mời b nhập điểm html: ");
         double htmlScore = Double.parseDouble(scanner.nextLine());
