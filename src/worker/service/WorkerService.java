@@ -47,4 +47,26 @@ public class WorkerService {
         }
     }
 
+    public void modifySalaryV2(Scanner scanner, ArrayList<Worker> workers, boolean check, ArrayList<History> histories){
+        HistoryService historyService = new HistoryService();
+        System.out.println("Mời b nhập id công nhân: ");
+        String id = scanner.nextLine();
+        Worker worker = findById(id, workers);
+        if(worker == null){
+            System.out.println("Không tìm thấy worker có id: "+id);
+        } else {
+            System.out.println("Mời b nhập số tiền: ");
+            double newSal = Double.parseDouble(scanner.nextLine());
+            if(check){
+                worker.setSalary( worker.getSalary() + newSal);
+                //historyService.insertHistory(histories, "UP", worker);
+                historyService.insertHistoryV2(histories, "UP", worker.getId());
+            }else {
+                worker.setSalary( worker.getSalary() - newSal);
+                //historyService.insertHistory(histories, "DOWN", worker);
+                historyService.insertHistoryV2(histories, "DOWN", worker.getId());
+            }
+
+        }
+    }
 }

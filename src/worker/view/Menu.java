@@ -33,8 +33,11 @@ public class Menu {
                 case 4:
                     break;
                 case 5:
-                    System.out.println(histories);
-                    //
+                    //System.out.println(histories);
+                   for (History history: histories){
+                       history.displayHistories(workers);
+                   }
+
             }
             System.out.println("Do you want to continues?(Y/N)");
             String select = scanner.nextLine();

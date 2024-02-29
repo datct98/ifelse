@@ -12,4 +12,10 @@ public class HistoryService {
         history.setStatus(status);
         histories.add(history);
     }
+
+    public void insertHistoryV2(ArrayList<History> histories, String status, String workerId){
+        History history = new History(workerId, status);
+        history.setStatus(status);
+        histories.add(history);
+    }
 }
